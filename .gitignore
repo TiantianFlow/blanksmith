@@ -1,0 +1,26 @@
+node_modules/
+.output/
+.wxt/
+coverage/
+.superpowers/
+
+# Machine-local and secret-bearing files.
+.DS_Store
+.env
+.env.*
+!.env.example
+
+# Internal design artifacts — not part of the public repository.
+docs/superpowers/
+
+# Local/CAO agent artifacts — never published.
+.opencode/
+.claude/
+.agents/
+AGENTS.md
+
+# Internal export-process guide — not part of the public repository.
+# References internal tooling names and maintainer local paths.
+PUBLIC_EXPORT.md
+
+*.zip

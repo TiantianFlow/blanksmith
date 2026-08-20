@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "dataSource": "fixture",
+  "fixedClock": "2026-08-19T12:00:00.000Z",
+  "generatedBy": "scripts/capture-store-assets.mjs",
+  "captures": [
+    {
+      "id": "enabled-en",
+      "view": "enabled",
+      "locale": "en",
+      "path": "chrome-web-store/screenshot-enabled-1280x800.png",
+      "sha256": "98406de9203d5fe83cd37e5fe0e95709b96163e3ed988995dd4005c387fd1a94",
+      "dimensions": {
+        "width": 1280,
+        "height": 800
+      },
+      "dataSource": "fixture"
+    },
+    {
+      "id": "global-mode-en",
+      "view": "global-mode",
+      "locale": "en",
+      "path": "chrome-web-store/screenshot-global-mode-1280x800.png",
+      "sha256": "fb08b53fc8d5cd681f3ae4918b5eff5509a233cc32f5a6b51c636fa9ea02bbea",
+      "dimensions": {
+        "width": 1280,
+        "height": 800
+      },
+      "dataSource": "fixture"
+    },
+    {
+      "id": "include-en",
+      "view": "include",
+      "locale": "en",
+      "path": "chrome-web-store/screenshot-include-1280x800.png",
+      "sha256": "6260a8643d86b27fd34d845486c44df52f1ada7db38f40a5df4c54fe3ed0bba0",
+      "dimensions": {
+        "width": 1280,
+        "height": 800
+      },
+      "dataSource": "fixture"
+    },
+    {
+      "id": "settings-en",
+      "view": "settings",
+      "locale": "en",
+      "path": "chrome-web-store/screenshot-settings-1280x800.png",
+      "sha256": "931b71e67a912cb6ed6b26835e4f57dadb5e953491d7f466bda7935c37e26b32",
+      "dimensions": {
+        "width": 1280,
+        "height": 800
+      },
+      "dataSource": "fixture"
+    },
+    {
+      "id": "promo-en",
+      "view": "promo",
+      "locale": "en",
+      "path": "chrome-web-store/small-promo-440x280.png",
+      "sha256": "94cdb40ea1040fce3ff4f3ddf06aeecd1c89e47563d5d1b7d7a9ea4cca98125b",
+      "dimensions": {
+        "width": 440,
+        "height": 280
+      },
+      "dataSource": "fixture"
+    },
+    {
+      "id": "enabled-zh_CN",
+      "view": "enabled",
+      "locale": "zh_CN",
+      "path": "chrome-web-store/zh_CN/screenshot-enabled-1280x800.png",
+      "sha256": "acbf8ef7c96e3ef69dc86ca3bbb12ac09b612f28a42beeed9e1abc2f1b48e8e3",
+      "dimensions": {
+        "width": 1280,
+        "height": 800
+      },
+      "dataSource": "fixture"
+    },
+    {
+      "id": "global-mode-zh_CN",
+      "view": "global-mode",
+      "locale": "zh_CN",
+      "path": "chrome-web-store/zh_CN/screenshot-global-mode-1280x800.png",
+      "sha256": "94e771514edc8b1abd694be18bd2ffec52d8c9a6a9bcf317f4493b21dfa1bbe4",
+      "dimensions": {
+        "width": 1280,
+        "height": 800
+      },
+      "dataSource": "fixture"
+    },
+    {
+      "id": "include-zh_CN",
+      "view": "include",
+      "locale": "zh_CN",
+      "path": "chrome-web-store/zh_CN/screenshot-include-1280x800.png",
+      "sha256": "f4f21b39e987148f01de671a3e23553aaed20d6aac8fca52ddfe890d5116c3ea",
+      "dimensions": {
+        "width": 1280,
+        "height": 800
+      },
+      "dataSource": "fixture"
+    },
+    {
+      "id": "settings-zh_CN",
+      "view": "settings",
+      "locale": "zh_CN",
+      "path": "chrome-web-store/zh_CN/screenshot-settings-1280x800.png",
+      "sha256": "abac84990e4eb300296e509030f02ff2cce2cc984a6e04f0a1a6b8de0f03af02",
+      "dimensions": {
+        "width": 1280,
+        "height": 800
+      },
+      "dataSource": "fixture"
+    },
+    {
+      "id": "social-en",
+      "view": "social",
+      "locale": "en",
+      "path": "github/social-preview-1280x640.png",
+      "sha256": "3c4a7bf6398151079db9fa284625fda111ddf9bec229fffb067e89ebd786c2e6",
+      "dimensions": {
+        "width": 1280,
+        "height": 640
+      },
+      "dataSource": "fixture"
+    }
+  ]
+}

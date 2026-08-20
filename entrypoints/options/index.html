@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blanksmith — Settings</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="settings">
+    <h1 id="settings-title">Blanksmith — Settings</h1>
+
+    <div id="lang-bar">
+      <label for="lang-select" id="lang-label">Language:</label>
+      <select id="lang-select" class="spl-select">
+        <option value="en">English</option>
+        <option value="zh_CN">中文</option>
+      </select>
+      <label for="mode-select" id="mode-label">Mode:</label>
+      <select id="mode-select" class="spl-select">
+        <option value="include-only" id="mode-include-opt">Included sites only</option>
+        <option value="exclude-only" id="mode-exclude-opt">All sites except excluded</option>
+      </select>
+    </div>
+
+    <details id="explanation" class="explanation">
+      <summary id="explanation-lead"></summary>
+      <p id="exp-p1"></p>
+      <p id="exp-p2"></p>
+      <p id="exp-p3"></p>
+    </details>
+
+    <section id="rules-section">
+      <h2 id="enabled-sites-heading">Enabled sites</h2>
+      <div id="rules-list" aria-live="polite">
+        <p id="no-rules" class="muted"></p>
+      </div>
+      <div id="paused-section" hidden>
+        <h3 id="paused-sites-heading"></h3>
+        <div id="paused-list"></div>
+      </div>
+      <div id="excluded-section" hidden>
+        <h3 id="excluded-sites-heading"></h3>
+        <div id="excluded-list" aria-live="polite">
+          <p id="no-excluded-rules" class="muted" hidden></p>
+        </div>
+      </div>
+      <p id="settings-error" class="message error" hidden></p>
+    </section>
+
+    <dialog id="rule-dialog" aria-labelledby="dialog-title-text">
+      <div id="dialog-content"></div>
+    </dialog>
+  </main>
+  <script type="module" src="main.ts"></script>
+</body>
+</html>

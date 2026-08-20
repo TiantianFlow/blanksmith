@@ -1,0 +1,362 @@
+/* Blanksmith — Settings styles */
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --danger: #dc2626;
+  --border: #e5e7eb;
+  --radius: 6px;
+  --select-padding: 6px 10px;
+  --select-font: 14px;
+  --focus-ring: 0 0 0 2px rgba(37, 99, 235, 0.3);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  color: var(--fg);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+main#settings {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+/* Shared select control — consistent with popup styles */
+.spl-select {
+  padding: var(--select-padding);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: var(--select-font);
+  font-family: inherit;
+  color: var(--fg);
+  background: var(--bg);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L2 4h8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 28px;
+}
+
+.spl-select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: var(--focus-ring);
+}
+
+.spl-select:disabled {
+  background: #f3f4f6;
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+/* Toolbar (language + mode) */
+#lang-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+#lang-bar label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+#lang-bar .spl-select {
+  width: auto;
+  min-width: 120px;
+}
+
+h1 { font-size: 22px; margin-bottom: 16px; }
+h2 { font-size: 18px; margin-bottom: 12px; }
+h3 { font-size: 16px; margin-bottom: 8px; }
+
+/* Explanation disclosure */
+details.explanation {
+  background: #f9fafb;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin-bottom: 24px;
+}
+
+details.explanation summary {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+details.explanation summary::marker { font-size: 14px; }
+
+.explanation p { margin-top: 10px; margin-bottom: 10px; }
+.explanation p:last-child { margin-bottom: 0; }
+.explanation code { background: #eef2ff; padding: 1px 4px; border-radius: 3px; font-size: 13px; }
+
+.muted { color: var(--muted); font-size: 13px; }
+
+/* Rule list */
+#rules-list, #paused-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rule-summary-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.rule-summary-row .rule-site-key {
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.rule-summary-row .rule-summary-text {
+  flex: 1;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rule-summary-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.rule-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.rule-badge.badge-advanced {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.rule-badge.badge-related {
+  background: #eef2ff;
+  color: var(--accent);
+}
+
+.rule-edit-btn {
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.rule-edit-btn:hover { background: #eff6ff; }
+
+#paused-section { margin-top: 24px; }
+
+/* Native dialog */
+dialog#rule-dialog {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  max-width: 520px;
+  width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  /* Restore native dialog centering: the universal * { margin: 0 }
+     reset above strips the browser's default margin: auto. */
+  margin: auto;
+}
+
+dialog#rule-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.dialog-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.dialog-error {
+  margin-bottom: 12px;
+}
+
+/* Rule editor (inside dialog) */
+.rule-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rule-editor label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Base field styling shared by selects and text inputs.
+   Select-only arrow styling (appearance, SVG arrow, padding-right) is
+   inherited from .spl-select — all rule-editor selects carry that class,
+   enforced by rule-editor.test.ts. No need to re-declare here. */
+.rule-editor select,
+.rule-editor input[type="text"] {
+  padding: var(--select-padding);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: var(--select-font);
+  font-weight: 400;
+  font-family: inherit;
+}
+
+.rule-editor select:focus,
+.rule-editor input[type="text"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: var(--focus-ring);
+}
+
+.rule-editor select:disabled {
+  background: #f3f4f6;
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+.rule-scope-readonly { margin-bottom: 4px; }
+
+.rule-scope-hint {
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+.rule-scope-hint code,
+.rule-example code {
+  background: #eef2ff;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.rule-example {
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+.rule-enabled-label {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 8px !important;
+}
+
+fieldset.related-fieldset {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px;
+}
+
+fieldset legend { font-size: 14px; font-weight: 500; padding: 0 4px; }
+
+.related-hint, .related-example { margin-bottom: 8px; }
+.related-hint code, .related-example code { background: #eef2ff; padding: 1px 4px; border-radius: 3px; }
+
+.related-list { list-style: none; margin-bottom: 8px; }
+
+.related-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.related-list li button {
+  background: none;
+  border: none;
+  color: var(--danger);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.related-add-row { display: flex; gap: 8px; }
+.related-add-row input { flex: 1; }
+
+.related-add-btn {
+  padding: 6px 14px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.related-add-btn:hover { opacity: 0.9; }
+
+/* Action buttons */
+.rule-button-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.primary-btn {
+  padding: 8px 18px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.primary-btn:hover { opacity: 0.9; }
+
+.secondary-btn {
+  padding: 8px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--fg);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.secondary-btn:hover { background: #f9fafb; }
+
+.danger-btn {
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--danger);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.danger-btn:hover { background: #fef2f2; border-color: var(--danger); }

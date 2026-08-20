@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="manifest.default_icon" content='{"16":"icons/16.png","32":"icons/32.png","48":"icons/48.png","128":"icons/128.png"}' />
+  <title>Blanksmith</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="popup">
+    <h1 id="ext-name">Blanksmith</h1>
+
+    <section id="mode-section">
+      <label for="mode-select" id="mode-label">Mode:</label>
+      <select id="mode-select" class="spl-select">
+        <option value="include-only" id="mode-include-opt">Included sites only</option>
+        <option value="exclude-only" id="mode-exclude-opt">All sites except excluded</option>
+      </select>
+      <p id="mode-desc" class="muted"></p>
+    </section>
+
+    <section id="state-section" aria-live="polite">
+      <p id="scope-summary" class="scope-summary">Loading…</p>
+    </section>
+
+    <section id="action-section">
+      <button id="include-btn" class="primary-btn" disabled>
+        Include this site
+      </button>
+      <button id="exclude-btn" class="secondary-btn" hidden>
+        Exclude this site
+      </button>
+    </section>
+
+    <section id="scope-section" hidden>
+      <label for="scope-select" id="scope-label">Activation scope:</label>
+      <select id="scope-select" class="spl-select">
+        <option value="site" id="scope-site-opt">Site and subdomains</option>
+        <option value="host" id="scope-host-opt">Exact host only</option>
+      </select>
+    </section>
+
+    <section id="message-section" aria-live="assertive">
+      <p id="message" class="message" hidden></p>
+    </section>
+
+    <footer>
+      <select id="lang-select" class="spl-select">
+        <option value="en">English</option>
+        <option value="zh_CN">中文</option>
+      </select>
+      <a href="#" id="settings-link">Settings →</a>
+    </footer>
+  </main>
+  <script type="module" src="main.ts"></script>
+</body>
+</html>

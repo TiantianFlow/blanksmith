@@ -1,0 +1,41 @@
+{
+  "name": "same-property-links",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Chrome MV3 extension that opens unwanted same-property target=_blank links in the current tab while preserving new tabs to independent properties.",
+  "author": "TiantianFlow",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TiantianFlow/blanksmith.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TiantianFlow/blanksmith/issues"
+  },
+  "homepage": "https://github.com/TiantianFlow/blanksmith#readme",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "test:run": "wxt build && vitest run",
+    "typecheck": "tsc --noEmit",
+    "build": "wxt build",
+    "dev": "wxt",
+    "prepare": "wxt prepare",
+    "assets:store": "wxt build && node scripts/capture-store-assets.mjs",
+    "verify:store-assets": "node scripts/verify-store-assets.mjs",
+    "verify": "pnpm test:run && pnpm typecheck && pnpm build && pnpm verify:store-assets"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.287",
+    "@types/jsdom": "^30.0.0",
+    "jsdom": "^25.0.1",
+    "playwright-core": "1.61.0",
+    "pngjs": "7.0.0",
+    "tldts": "^6.1.85",
+    "typescript": "^5.7.2",
+    "vite": "^6.4.3",
+    "vitest": "^3.2.7",
+    "wxt": "^0.21.0"
+  },
+  "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319"
+}

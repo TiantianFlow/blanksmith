@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- Blanksmith / 原地打开 icon: full-bleed blue square with a bold white
+       rightward arrow. The arrow communicates "links open here (in the current
+       tab)" — a directional mark pointing right into the page, not outward to
+       a new tab. Full-bleed (no margin) maximizes visibility at 16px.
+       No text, no internal frame, no thin strokes. -->
+  <!-- Full-bleed blue background — uses the entire canvas -->
+  <rect x="0" y="0" width="128" height="128" fill="#2563eb"/>
+  <!-- Bold white arrow: enters from left, curves right (in-place direction).
+       Single thick stroke, no separate arrowhead — the stroke terminates
+       with a triangular point built into the path. Legible at 16px as
+       "blue square, white arrow pointing right." -->
+  <path d="M 28 64 L 76 64 L 76 44 L 104 64 L 76 84 L 76 64"
+        fill="none" stroke="#ffffff" stroke-width="14"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
